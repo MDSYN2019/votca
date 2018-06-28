@@ -95,7 +95,6 @@ elif [[ $ENV -eq 13 ]]; then
   add_to_docker_opts TESTOPTS="-L ${TRAVIS_REPO_SLUG#*/} -E \(_imc\|spce_cma_simple\|_re\)"
   add_to_docker_opts CMAKE_BUILD_TYPE=None
   add_to_docker_opts COVERAGE=yes
-  export SKIP=yes # bug #67
   [[ $CC = clang ]] && export SKIP=yes # no new info when using clang
 elif [[ $ENV -eq 14 ]]; then
   # Build with no cmake_build_type and coverage on, second half of the tests
@@ -104,7 +103,6 @@ elif [[ $ENV -eq 14 ]]; then
   add_to_docker_opts TESTOPTS="-L ${TRAVIS_REPO_SLUG#*/} -R _re"
   add_to_docker_opts CMAKE_BUILD_TYPE=None
   add_to_docker_opts COVERAGE=yes
-  export SKIP=yes # bug #67
   [[ $CC = clang ]] && export SKIP=yes # no new info when using clang
 elif [[ $ENV -eq 15 ]]; then
   # Build with doxygen
